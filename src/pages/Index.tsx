@@ -40,11 +40,11 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-indigo-50/30 to-purple-50/50 relative overflow-hidden">
-      {/* Animated Background Elements */}
+      {/* Static Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-10 left-10 w-72 h-72 bg-purple-200/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute top-1/3 right-20 w-96 h-96 bg-indigo-200/20 rounded-full blur-3xl animate-pulse delay-700"></div>
-        <div className="absolute bottom-20 left-1/3 w-80 h-80 bg-blue-200/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        <div className="absolute top-10 left-10 w-72 h-72 bg-purple-200/20 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/3 right-20 w-96 h-96 bg-indigo-200/20 rounded-full blur-3xl"></div>
+        <div className="absolute bottom-20 left-1/3 w-80 h-80 bg-blue-200/20 rounded-full blur-3xl"></div>
       </div>
 
       {/* Hero Section */}
@@ -52,7 +52,7 @@ const Index = () => {
         <div className="text-center mb-16">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-white/60 backdrop-blur-md border border-purple-200/30 text-purple-700 px-6 py-3 rounded-full text-sm font-medium mb-8 shadow-lg hover:shadow-xl transition-all duration-300">
-            <Sparkles className="w-4 h-4 animate-pulse" />
+            <Sparkles className="w-4 h-4" />
             For indie hackers, vibe coders, dreamers & doers 🚀
           </div>
           
