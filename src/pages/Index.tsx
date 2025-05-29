@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Sparkles, Zap, Heart, Share2, Bookmark, Palette, Brain, Briefcase, Coffee, Github, Twitter, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -42,29 +41,35 @@ const Index = () => {
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-indigo-50/30 to-purple-50/50 relative overflow-hidden">
       {/* Enhanced Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {/* Floating Geometric Shapes */}
-        <div className="absolute top-20 right-20 w-64 h-64 bg-gradient-to-br from-purple-400/10 to-indigo-400/10 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute top-1/3 left-10 w-96 h-96 bg-gradient-to-br from-blue-400/8 to-cyan-400/8 rounded-full blur-3xl animate-pulse delay-700"></div>
-        <div className="absolute bottom-20 right-1/3 w-80 h-80 bg-gradient-to-br from-pink-400/8 to-purple-400/8 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        {/* Floating Geometric Shapes - Made Larger and More Visible */}
+        <div className="absolute top-10 right-10 w-[500px] h-[500px] bg-gradient-to-br from-purple-400/20 to-indigo-400/15 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute top-1/4 left-0 w-[600px] h-[600px] bg-gradient-to-br from-blue-400/15 to-cyan-400/20 rounded-full blur-3xl animate-pulse delay-700"></div>
+        <div className="absolute bottom-10 right-1/4 w-[450px] h-[450px] bg-gradient-to-br from-pink-400/18 to-purple-400/15 rounded-full blur-3xl animate-pulse delay-1000"></div>
         
-        {/* Abstract Lines and Shapes */}
-        <div className="absolute top-32 left-1/4 w-px h-32 bg-gradient-to-b from-transparent via-purple-300/30 to-transparent"></div>
-        <div className="absolute top-1/2 right-1/4 w-px h-40 bg-gradient-to-b from-transparent via-indigo-300/30 to-transparent rotate-45"></div>
+        {/* Abstract Lines and Shapes - Made More Prominent */}
+        <div className="absolute top-24 left-1/3 w-1 h-48 bg-gradient-to-b from-transparent via-purple-300/50 to-transparent"></div>
+        <div className="absolute top-1/2 right-1/5 w-1 h-56 bg-gradient-to-b from-transparent via-indigo-300/50 to-transparent rotate-45"></div>
+        <div className="absolute top-40 left-2/3 w-1 h-32 bg-gradient-to-b from-transparent via-pink-300/40 to-transparent -rotate-12"></div>
         
-        {/* Floating Dots */}
-        <div className="absolute top-1/4 left-1/3 w-2 h-2 bg-purple-400/40 rounded-full animate-pulse delay-300"></div>
-        <div className="absolute top-2/3 right-1/5 w-1 h-1 bg-indigo-400/40 rounded-full animate-pulse delay-500"></div>
-        <div className="absolute top-1/6 right-2/5 w-1.5 h-1.5 bg-pink-400/40 rounded-full animate-pulse delay-800"></div>
+        {/* Floating Dots - Made Bigger */}
+        <div className="absolute top-1/5 left-1/4 w-4 h-4 bg-purple-400/60 rounded-full animate-pulse delay-300"></div>
+        <div className="absolute top-2/3 right-1/6 w-3 h-3 bg-indigo-400/60 rounded-full animate-pulse delay-500"></div>
+        <div className="absolute top-1/6 right-2/5 w-5 h-5 bg-pink-400/50 rounded-full animate-pulse delay-800"></div>
+        <div className="absolute bottom-1/3 left-1/5 w-3 h-3 bg-cyan-400/60 rounded-full animate-pulse delay-1200"></div>
         
-        {/* Subtle Grid Pattern */}
-        <div className="absolute inset-0 opacity-[0.03]" style={{
+        {/* Subtle Grid Pattern - Made More Visible */}
+        <div className="absolute inset-0 opacity-[0.08]" style={{
           backgroundImage: `radial-gradient(circle at 1px 1px, rgb(148 163 184) 1px, transparent 0)`,
           backgroundSize: '50px 50px'
         }}></div>
         
-        {/* Gradient Overlay Shapes */}
-        <div className="absolute top-0 left-0 w-1/2 h-1/3 bg-gradient-to-br from-purple-500/5 to-transparent rounded-br-[200px]"></div>
-        <div className="absolute bottom-0 right-0 w-1/3 h-1/2 bg-gradient-to-tl from-indigo-500/5 to-transparent rounded-tl-[150px]"></div>
+        {/* Gradient Overlay Shapes - Made Bigger and More Visible */}
+        <div className="absolute top-0 left-0 w-2/3 h-1/2 bg-gradient-to-br from-purple-500/12 to-transparent rounded-br-[300px]"></div>
+        <div className="absolute bottom-0 right-0 w-1/2 h-2/3 bg-gradient-to-tl from-indigo-500/12 to-transparent rounded-tl-[250px]"></div>
+        
+        {/* Additional Geometric Elements */}
+        <div className="absolute top-1/3 right-1/3 w-32 h-32 border border-purple-300/30 rounded-3xl rotate-12 animate-pulse delay-1500"></div>
+        <div className="absolute bottom-1/4 left-1/3 w-24 h-24 border border-indigo-300/40 rounded-2xl -rotate-6 animate-pulse delay-2000"></div>
       </div>
 
       {/* Hero Section */}
