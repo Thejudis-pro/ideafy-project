@@ -1,3 +1,4 @@
+
 import React, { useState } from 'react';
 import { Sparkles, Zap, Heart, Share2, Bookmark, Palette, Brain, Briefcase, Coffee, Github, Twitter, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -42,11 +43,10 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-indigo-50/30 to-purple-50/50 relative overflow-hidden">
-      {/* Static Background Elements */}
-      <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-10 left-10 w-72 h-72 bg-purple-200/20 rounded-full blur-3xl"></div>
-        <div className="absolute top-1/3 right-20 w-96 h-96 bg-indigo-200/20 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 left-1/3 w-80 h-80 bg-blue-200/20 rounded-full blur-3xl"></div>
+      {/* Top Left Branding */}
+      <div className="absolute top-4 left-6 text-xl font-bold text-purple-600 flex items-center gap-2 z-20">
+        <Sparkles className="w-6 h-6" />
+        Ideafy
       </div>
 
       {/* Hero Section */}
