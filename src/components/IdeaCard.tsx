@@ -32,7 +32,7 @@ export const IdeaCard: React.FC<IdeaCardProps> = ({ idea, onSave, isSaved, compa
   const categoryGradient = categoryColors[idea.category as keyof typeof categoryColors] || 'from-slate-500 to-gray-500';
 
   return (
-    <Card className={`${compact ? 'max-w-sm' : 'max-w-3xl'} mx-auto bg-white/90 backdrop-blur-xl border border-white/20 shadow-2xl hover:shadow-purple-500/10 transition-all duration-500 transform hover:scale-[1.02] hover:-translate-y-2 rounded-3xl overflow-hidden group`}>
+    <Card className={`${compact ? 'max-w-sm' : 'max-w-3xl'} mx-auto bg-white/90 backdrop-blur-xl border border-white/20 shadow-2xl hover:shadow-purple-500/10 transition-all duration-300 rounded-3xl overflow-hidden group`}>
       {/* Gradient Header Bar */}
       <div className={`h-2 bg-gradient-to-r ${categoryGradient}`} />
       
@@ -52,7 +52,7 @@ export const IdeaCard: React.FC<IdeaCardProps> = ({ idea, onSave, isSaved, compa
               variant="ghost"
               size="sm"
               onClick={onSave}
-              className={`rounded-full p-3 transition-all duration-300 ${isSaved ? 'text-red-500 bg-red-50 hover:bg-red-100' : 'text-slate-400 hover:text-red-500 hover:bg-red-50'}`}
+              className={`rounded-full p-3 transition-colors duration-200 ${isSaved ? 'text-red-500 bg-red-50 hover:bg-red-100' : 'text-slate-400 hover:text-red-500 hover:bg-red-50'}`}
             >
               <Heart className={`w-5 h-5 ${isSaved ? 'fill-current' : ''}`} />
             </Button>
@@ -60,7 +60,7 @@ export const IdeaCard: React.FC<IdeaCardProps> = ({ idea, onSave, isSaved, compa
               variant="ghost"
               size="sm"
               onClick={handleShare}
-              className="rounded-full p-3 text-slate-400 hover:text-blue-500 hover:bg-blue-50 transition-all duration-300"
+              className="rounded-full p-3 text-slate-400 hover:text-blue-500 hover:bg-blue-50 transition-colors duration-200"
             >
               <Share2 className="w-5 h-5" />
             </Button>
@@ -127,7 +127,7 @@ export const IdeaCard: React.FC<IdeaCardProps> = ({ idea, onSave, isSaved, compa
                   <Badge 
                     key={index} 
                     variant="outline" 
-                    className="bg-white/80 border-purple-200 text-purple-700 px-3 py-1 rounded-lg font-semibold hover:bg-purple-50 transition-colors"
+                    className="bg-white/80 border-purple-200 text-purple-700 px-3 py-1 rounded-lg font-semibold hover:bg-purple-50 transition-colors duration-200"
                   >
                     {tech}
                   </Badge>
