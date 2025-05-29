@@ -1,5 +1,6 @@
-
 import type { Idea, Filters } from '@/types/idea';
+import { hasIdeaBeenSeen, storeIdeaInHistory, cleanupOldHistory } from './ideaHistory';
+import { applyIdeaVariations } from './ideaVariations';
 
 const ideaTemplates = {
   names: [
@@ -88,7 +89,8 @@ function filterByPreference<T>(items: T[], preference: string, defaultValue: str
   );
 }
 
-export function generateIdea(filters: Filters): Idea {
+// Generate a completely fresh idea
+function generateFreshIdea(filters: Filters): Idea {
   const id = Math.random().toString(36).substr(2, 9);
   
   // Select category
@@ -141,4 +143,47 @@ export function generateIdea(filters: Filters): Idea {
     vibe,
     businessModel
   };
+}
+
+export function generateIdea(filters: Filters): Idea {
+  // Clean up old history periodically
+  cleanupOldHistory();
+  
+  let attempts = 0;
+  const maxAttempts = 20; // Prevent infinite loops
+  
+  while (attempts < maxAttempts) {
+    let idea = generateFreshIdea(filters);
+    
+    // Check if we've seen this idea before
+    if (!hasIdeaBeenSeen(idea)) {
+      // Store this new idea in history
+      storeIdeaInHistory(idea);
+      console.log(`Generated fresh idea: ${idea.name} (attempt ${attempts + 1})`);
+      return idea;
+    }
+    
+    // If we've seen it before, try to apply variations
+    if (attempts < maxAttempts / 2) {
+      idea = applyIdeaVariations(idea);
+      
+      // Check if the varied idea is unique
+      if (!hasIdeaBeenSeen(idea)) {
+        storeIdeaInHistory(idea);
+        console.log(`Generated varied idea: ${idea.name} (attempt ${attempts + 1}, variation applied)`);
+        return idea;
+      }
+    }
+    
+    attempts++;
+  }
+  
+  // Fallback: generate a basic idea and apply multiple variations
+  let fallbackIdea = generateFreshIdea(filters);
+  fallbackIdea = applyIdeaVariations(fallbackIdea);
+  fallbackIdea = applyIdeaVariations(fallbackIdea); // Double variation for uniqueness
+  
+  storeIdeaInHistory(fallbackIdea);
+  console.log(`Generated fallback idea with double variations: ${fallbackIdea.name}`);
+  return fallbackIdea;
 }

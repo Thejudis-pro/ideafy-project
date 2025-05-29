@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Sparkles, Zap, Heart, Share2, Bookmark, Palette, Brain, Briefcase, Coffee, Github, Twitter, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
@@ -16,10 +15,12 @@ const Index = () => {
     vibe: 'any',
     businessModel: 'any'
   });
+  const [generationCount, setGenerationCount] = useState(0);
 
   const handleGenerateIdea = () => {
     const newIdea = generateIdea(filters);
     setCurrentIdea(newIdea);
+    setGenerationCount(prev => prev + 1);
   };
 
   const handleFeelingLucky = () => {
@@ -30,6 +31,7 @@ const Index = () => {
       businessModel: 'any'
     });
     setCurrentIdea(luckyIdea);
+    setGenerationCount(prev => prev + 1);
   };
 
   const handleSaveIdea = (idea: Idea) => {
@@ -54,6 +56,11 @@ const Index = () => {
           <div className="inline-flex items-center gap-2 bg-white/60 backdrop-blur-md border border-purple-200/30 text-purple-700 px-6 py-3 rounded-full text-sm font-medium mb-8 shadow-lg hover:shadow-xl transition-all duration-300">
             <Sparkles className="w-4 h-4" />
             For indie hackers, vibe coders, dreamers & doers 🚀
+            {generationCount > 0 && (
+              <span className="ml-2 bg-purple-100 text-purple-600 px-2 py-1 rounded-full text-xs font-semibold">
+                {generationCount} fresh ideas generated ✨
+              </span>
+            )}
           </div>
           
           {/* Main Headline */}
@@ -75,7 +82,7 @@ const Index = () => {
           </p>
           
           <p className="text-lg text-slate-500 mb-12 font-medium">
-            ✨ Stop staring at blank screens. Start building magic.
+            ✨ Every idea is unique - powered by smart generation that learns from your history
           </p>
 
           {/* CTA Buttons */}
@@ -86,7 +93,7 @@ const Index = () => {
               className="bg-gradient-to-r from-purple-500 via-indigo-500 to-purple-600 hover:from-purple-600 hover:via-indigo-600 hover:to-purple-700 text-white px-10 py-4 rounded-xl font-bold text-lg shadow-2xl hover:shadow-purple-500/25 transition-all duration-300 transform hover:scale-105 border-0"
             >
               <Zap className="w-6 h-6 mr-3" />
-              Generate Idea
+              Generate Unique Idea
             </Button>
             
             <Button 
