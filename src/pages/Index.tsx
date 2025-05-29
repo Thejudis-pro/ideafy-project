@@ -40,11 +40,31 @@ const Index = () => {
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-slate-50 via-indigo-50/30 to-purple-50/50 relative overflow-hidden">
-      {/* Animated Background Elements */}
+      {/* Enhanced Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-10 left-10 w-72 h-72 bg-purple-200/20 rounded-full blur-3xl animate-pulse"></div>
-        <div className="absolute top-1/3 right-20 w-96 h-96 bg-indigo-200/20 rounded-full blur-3xl animate-pulse delay-700"></div>
-        <div className="absolute bottom-20 left-1/3 w-80 h-80 bg-blue-200/20 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        {/* Floating Geometric Shapes */}
+        <div className="absolute top-20 right-20 w-64 h-64 bg-gradient-to-br from-purple-400/10 to-indigo-400/10 rounded-full blur-3xl animate-pulse"></div>
+        <div className="absolute top-1/3 left-10 w-96 h-96 bg-gradient-to-br from-blue-400/8 to-cyan-400/8 rounded-full blur-3xl animate-pulse delay-700"></div>
+        <div className="absolute bottom-20 right-1/3 w-80 h-80 bg-gradient-to-br from-pink-400/8 to-purple-400/8 rounded-full blur-3xl animate-pulse delay-1000"></div>
+        
+        {/* Abstract Lines and Shapes */}
+        <div className="absolute top-32 left-1/4 w-px h-32 bg-gradient-to-b from-transparent via-purple-300/30 to-transparent"></div>
+        <div className="absolute top-1/2 right-1/4 w-px h-40 bg-gradient-to-b from-transparent via-indigo-300/30 to-transparent rotate-45"></div>
+        
+        {/* Floating Dots */}
+        <div className="absolute top-1/4 left-1/3 w-2 h-2 bg-purple-400/40 rounded-full animate-pulse delay-300"></div>
+        <div className="absolute top-2/3 right-1/5 w-1 h-1 bg-indigo-400/40 rounded-full animate-pulse delay-500"></div>
+        <div className="absolute top-1/6 right-2/5 w-1.5 h-1.5 bg-pink-400/40 rounded-full animate-pulse delay-800"></div>
+        
+        {/* Subtle Grid Pattern */}
+        <div className="absolute inset-0 opacity-[0.03]" style={{
+          backgroundImage: `radial-gradient(circle at 1px 1px, rgb(148 163 184) 1px, transparent 0)`,
+          backgroundSize: '50px 50px'
+        }}></div>
+        
+        {/* Gradient Overlay Shapes */}
+        <div className="absolute top-0 left-0 w-1/2 h-1/3 bg-gradient-to-br from-purple-500/5 to-transparent rounded-br-[200px]"></div>
+        <div className="absolute bottom-0 right-0 w-1/3 h-1/2 bg-gradient-to-tl from-indigo-500/5 to-transparent rounded-tl-[150px]"></div>
       </div>
 
       {/* Hero Section */}
